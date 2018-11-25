@@ -24,10 +24,10 @@ namespace Booking.Tests
                 Reference = "X"
             };
             _repository = new Mock<IBookingRepository>();
-            _repository.Setup(r => r.GetActiveBookings(1)).Returns(new List<Booking>
+            _repository.Setup(r => r.GetActiveBookings(It.IsAny<int>())).Returns(new List<Booking>
             {
               _existingBooking
-            }.AsQueryable());
+            }.AsQueryable());            
         }
 
         //Sprawdzenie istniejącej rezewacji

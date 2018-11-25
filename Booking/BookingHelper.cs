@@ -13,7 +13,7 @@ namespace Booking
             if (booking.Status == "Cancelled")
                 return string.Empty;
 
-            var bookings = _repository.GetActiveBookings(1);
+            var bookings = _repository.GetActiveBookings(booking.Id);
 
             var overlappingBooking = bookings.FirstOrDefault(b =>
                 booking.Id == b.Id ||
